@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menu Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <h1><span class="badge badge-secondary">Menu Page</span></h1>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/movies/search" 
+                                data-toggle="tooltip" data-placement="top" title="Search Movie">Serach Movies<span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/movies/create" data-toggle="tooltip" data-placement="top" title="Create Movie">Create Movies<span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <% if(locals.isAdmin){ %>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/users/edit" data-toggle="tooltip" data-placement="top" title="Users Management">Users Management <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <% } %>
+                        </ul>
+                        <% if(locals.message){ %>
+                        <div><%=message.error%></div>
+                        <% } %>
+                </nav>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
